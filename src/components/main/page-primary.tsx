@@ -68,7 +68,7 @@ export default function PagePrimary() {
   return (
     <main className="flex h-full w-full max-lg:p-0">
       <div className="flex h-full w-full flex-col gap-8 rounded-l-xl bg-zinc-800 p-6 max-lg:rounded-b-none max-lg:rounded-t-2xl">
-        <h1 className="text-7xl font-bold">Buscar CEP</h1>
+        <h1 className="text-7xl font-bold max-lg:text-5xl">Buscar CEP</h1>
         <p className="max-w-2xl text-xl font-medium">
           Bem vindo ao <strong className="text-yellow-300">Fui de CEP</strong>,
           o caminho para encontrar seu destino. Localize, siga, chegue!!

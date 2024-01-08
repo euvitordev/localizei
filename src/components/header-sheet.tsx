@@ -65,7 +65,7 @@ export function HeaderSheet({ children }: { children: React.ReactNode }) {
       </SheetTrigger>
       <SheetContent
         side={"left"}
-        className="flex w-96 flex-col items-start justify-between"
+        className="flex w-72 flex-col items-start justify-between"
       >
         <div className="mt-10 flex w-full  flex-col gap-4">
           <h2 className="text-2xl font-bold">Meios de contato</h2>
