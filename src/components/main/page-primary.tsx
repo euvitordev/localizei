@@ -119,7 +119,7 @@ export default function PagePrimary() {
                   {dadosCep.map((item, index) => (
                     <div
                       key={index}
-                      className="flex items-start gap-2 border-zinc-500/30 text-xl font-bold"
+                      className="flex items-start gap-2 border-zinc-500/30 text-xl font-bold max-lg:flex-col"
                     >
                       <h3 className="">{item.name}:</h3>
                       <span className="text-zinc-400">{item.state}</span>
