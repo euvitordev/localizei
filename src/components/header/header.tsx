@@ -1,9 +1,8 @@
-import Image from "next/image";
-import Maps from "../../../public/maps.png";
-import { Button } from "../ui/button";
-import { GithubIcon, PanelLeft } from "lucide-react";
-import { HeaderSheet } from "../header-sheet";
-import { ModeToggle } from "../mode-toggle";
+import Image from "next/image"
+import Maps from "../../../public/maps.png"
+import { Button } from "../ui/button"
+import { GithubIcon, PanelLeft } from "lucide-react"
+import { HeaderSheet } from "../header-sheet"
 export default function Header() {
   return (
     <header className="flex w-full items-center justify-between p-4">
@@ -29,5 +28,5 @@ export default function Header() {
         </a>
       </nav>
     </header>
-  );
+  )
 }
