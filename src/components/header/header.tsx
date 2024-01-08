@@ -18,7 +18,7 @@ export default function Header() {
         </HeaderSheet>
         <a
           target="_blank"
-          href="https://github.com/euvitordev/mimo-cep"
+          href="https://github.com/euvitordev/fui-de-cep"
           className="max-lg:hidden"
         >
           <Button className="flex items-center justify-between gap-4 rounded-xl border-2 border-yellow-300 bg-yellow-300 p-6 font-bold text-black shadow-2xl shadow-zinc-500/10 duration-700 hover:bg-transparent hover:text-white hover:shadow-yellow-300/10">
