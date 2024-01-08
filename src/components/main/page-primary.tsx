@@ -1,14 +1,14 @@
-"use client";
-import React, { useState } from "react";
-import { Copy, Search } from "lucide-react";
-import api from "../../api/cep";
-import CopyToClipboard from "react-copy-to-clipboard";
-import { Button } from "../ui/button";
-import Image from "next/image";
-import ImageAdventureMap from "../../../public/images/adventure_map.svg";
+"use client"
+import React, { useState } from "react"
+import { Copy, Search } from "lucide-react"
+import api from "../../api/cep"
+import CopyToClipboard from "react-copy-to-clipboard"
+import { Button } from "../ui/button"
+import Image from "next/image"
+import ImageAdventureMap from "../../../public/images/adventure_map.svg"
 
 export default function PagePrimary() {
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState("")
   const [cep, setCep] = useState({
     cep: "",
     logradouro: "",
@@ -17,7 +17,7 @@ export default function PagePrimary() {
     localidade: "",
     uf: "",
     ddd: "",
-  });
+  })
 
   const dadosCep = [
     {
@@ -44,26 +44,26 @@ export default function PagePrimary() {
       name: "DDD",
       state: `${cep.ddd}`,
     },
-  ];
-  const enderecoCompleto = `${cep.cep}, ${cep.logradouro}, ${cep.complemento}, ${cep.bairro}, ${cep.localidade} - ${cep.uf} - ${cep.ddd}`;
+  ]
+  const enderecoCompleto = `${cep.cep}, ${cep.logradouro}, ${cep.complemento}, ${cep.bairro}, ${cep.localidade} - ${cep.uf} - ${cep.ddd}`
 
   const handleSearch = async () => {
     if (!input.trim()) {
-      alert("Preencha algum CEP!");
-      return;
+      alert("Preencha algum CEP!")
+      return
     }
 
-    const cepSemEspaco = input.replace(/-/g, "");
+    const cepSemEspaco = input.replace(/-/g, "")
 
     try {
-      const response = await api.get(`${cepSemEspaco}/json`);
-      setCep(response.data);
-      setInput("");
+      const response = await api.get(`${cepSemEspaco}/json`)
+      setCep(response.data)
+      setInput("")
     } catch (error) {
-      alert("Erro ao buscar");
-      setInput("");
+      alert("Erro ao buscar")
+      setInput("")
     }
-  };
+  }
 
   return (
     <main className="flex h-full w-full max-lg:p-0">
@@ -93,7 +93,7 @@ export default function PagePrimary() {
                   <CopyToClipboard
                     text={enderecoCompleto}
                     onCopy={() => {
-                      alert("Endereço copiado para a área de transferência!");
+                      alert("Endereço copiado para a área de transferência!")
                       setCep({
                         cep: "",
                         logradouro: "",
@@ -102,7 +102,7 @@ export default function PagePrimary() {
                         localidade: "",
                         uf: "",
                         ddd: "",
-                      });
+                      })
                     }}
                   >
                     <Button
@@ -140,7 +140,7 @@ export default function PagePrimary() {
                 onChange={(event) => setInput(event.target.value)}
                 onKeyDown={(event) => {
                   if (event.keyCode === 13) {
-                    handleSearch();
+                    handleSearch()
                   }
                 }}
                 autoFocus
@@ -159,5 +159,5 @@ export default function PagePrimary() {
         </div>
       </div>
     </main>
-  );
+  )
 }

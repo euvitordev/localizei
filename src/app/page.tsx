@@ -1,7 +1,6 @@
-import Header from "@/components/header/header";
-import PageHistory from "@/components/main/page-history";
-import PagePrimary from "@/components/main/page-primary";
-import { History } from "lucide-react";
+import Header from "@/components/header/header"
+import PageHistory from "@/components/main/page-history"
+import PagePrimary from "@/components/main/page-primary"
 
 export default function Home() {
   return (
@@ -12,5 +11,5 @@ export default function Home() {
         <PageHistory />
       </div>
     </main>
-  );
+  )
 }
