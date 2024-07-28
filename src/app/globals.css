@@ -81,13 +81,26 @@
 }
 
 *::-webkit-scrollbar-track {
-  background: rgb(24 24 27);
+  background: rgb(233, 233, 233);
+  border-radius: 20px;
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: #ffffff80;
+  background-color: rgb(206, 206, 206);
   border-radius: 20px;
 }
 *::-webkit-scrollbar-thumb:hover {
-  background-color: rgb(253, 224, 71);
+  background-color: rgb(130, 130, 130);
+}
+
+.dark *::-webkit-scrollbar-track {
+  background: rgb(26, 26, 26);
+}
+
+.dark *::-webkit-scrollbar-thumb {
+  background-color: rgb(90, 90, 90);
+}
+
+.dark *::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(150, 150, 150);
 }
