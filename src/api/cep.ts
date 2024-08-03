@@ -1,7 +1,7 @@
 import axios from "axios"
 
 const cep = axios.create({
-  baseURL: "https://viacep.com.br/ws/",
+  baseURL: process.env.NEXT_PUBLIC_API_CEP_URL,
 })
 
 export default cep
