@@ -36,7 +36,7 @@ export function VersionInformation() {
             <DialogTitle className="font-bold text-4xl">v1.0.0</DialogTitle>
             <DialogDescription>
               <strong>Atualização de</strong>{" "}
-              <span className="">27 de julho de 2024</span>
+              <span className="">agosto de 2024</span>
             </DialogDescription>
           </DialogHeader>
 

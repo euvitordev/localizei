@@ -16,14 +16,24 @@ interface HistoryManagerProps {
 }
 
 export default function HistoryManager({ children }: HistoryManagerProps) {
-  const [history, setHistory] = useState<HistoryItem[]>(() => {
-    const storedHistory = localStorage.getItem("cepHistory")
-    return storedHistory ? JSON.parse(storedHistory) : []
-  })
+  const [history, setHistory] = useState<HistoryItem[]>([])
+  const [isClient, setIsClient] = useState(false)
 
   useEffect(() => {
-    localStorage.setItem("cepHistory", JSON.stringify(history))
-  }, [history])
+    setIsClient(true)
+    if (typeof window !== "undefined") {
+      const storedHistory = localStorage.getItem("cepHistory")
+      if (storedHistory) {
+        setHistory(JSON.parse(storedHistory))
+      }
+    }
+  }, [])
+
+  useEffect(() => {
+    if (isClient) {
+      localStorage.setItem("cepHistory", JSON.stringify(history))
+    }
+  }, [history, isClient])
 
   const handleDeleteHistoryItem = (index: number) => {
     const newHistory = history.filter((_, i) => i !== index)
@@ -31,5 +41,7 @@ export default function HistoryManager({ children }: HistoryManagerProps) {
     toast.success("Item do histórico excluído com sucesso!")
   }
 
-  return <>{children(history, setHistory, handleDeleteHistoryItem)}</>
+  return isClient ? (
+    <>{children(history, setHistory, handleDeleteHistoryItem)}</>
+  ) : null
 }

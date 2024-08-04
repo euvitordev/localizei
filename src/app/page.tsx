@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <HistoryManager>
       {(history, setHistory, handleDeleteHistoryItem) => (
-        <div className="flex h-screen bg-background dark:bg-zinc-900">
+        <div className="flex h-screen w-full bg-background dark:bg-zinc-900">
           <Sidebar history={history} onDelete={handleDeleteHistoryItem} />
           <SearchComponent setHistory={setHistory} />
         </div>

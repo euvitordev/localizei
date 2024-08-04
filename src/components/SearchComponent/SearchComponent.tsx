@@ -5,6 +5,7 @@ import api from "../../api/cep"
 import { Footer } from "../Footer/FooterComponent"
 import CepInfo from "./CepInfo"
 import SearchInput from "./SearchInput"
+import Popup from "./Popup"
 
 interface CepData {
   cep: string
@@ -109,19 +110,7 @@ export default function SearchComponent({ setHistory }: SearchComponentProps) {
                 { cep: newCep.cep, address },
                 ...prevHistory,
               ])
-              const promise = () =>
-                new Promise((resolve) =>
-                  setTimeout(() => resolve({ name: "Sonner" }), 2000)
-                )
-
-              toast.promise(promise, {
-                loading: "Buscando localização...",
-                success: () => {
-                  return `Endereço encontrado: ${address}`
-                },
-                error: "Error",
-              })
-              // toast.success(`Endereço encontrado: ${address}`)
+              toast.success(`Endereço encontrado: ${address}`)
             } else {
               toast.error(
                 "Não foi possível encontrar o endereço para a localização atual."
@@ -129,12 +118,11 @@ export default function SearchComponent({ setHistory }: SearchComponentProps) {
             }
           } catch (error) {
             toast.error("Erro ao buscar o endereço.")
+          } finally {
+            setTimeout(() => {
+              setPopupVisible(false)
+            }, 1000)
           }
-          // finally {
-          //   setTimeout(() => {
-          //     setPopupVisible(false)
-          //   }, 1000)
-          // }
         },
         (error) => {
           toast.error("Não foi possível obter a localização.")
@@ -158,30 +146,34 @@ export default function SearchComponent({ setHistory }: SearchComponentProps) {
 
   return (
     <>
-      <div className="flex flex-col w-full mx-auto max-w-7xl h-full justify-between p-4 gap-4">
-        <div className="flex h-full gap-4 max-md:flex-col">
-          {cep.cep && <CepInfo cep={cep} />}
+      <div className="flex flex-col w-full mx-auto max-w-6xl h-full justify-between gap-4">
+        <div className="flex w-full h-full gap-4 max-md:flex-col p-4">
+          <div className="flex w-full h-full gap-4 p-4 max-md:flex-col max-md:overflow-auto max-md:h-full max-md:pb-40 max-md:pr-2">
+            {cep.cep && <CepInfo cep={cep} />}
 
-          <iframe
-            className="w-full rounded-3xl hover:rounded-2xl transition-all delay-75 duration-300"
-            width="100%"
-            height="100%"
-            src={`https://www.google.com/maps/embed/v1/place?key=${process.env.NEXT_PUBLIC_KEY_GOOGLE_MAPS}=${cep.logradouro},${cep.bairro},${cep.localidade},${cep.uf}`}
-            allowFullScreen
-            loading="lazy"
-          />
+            <iframe
+              className="w-full rounded-3xl hover:rounded-2xl transition-all delay-75 duration-300"
+              width="100%"
+              height="100%"
+              src={`https://www.google.com/maps/embed/v1/place?key=${process.env.NEXT_PUBLIC_KEY_GOOGLE_MAPS}=${cep.logradouro},${cep.bairro},${cep.localidade},${cep.uf}`}
+              allowFullScreen
+              loading="lazy"
+            />
+          </div>
         </div>
-        <SearchInput
-          value={input}
-          onChange={handleInputChange}
-          onKeyDown={handleKeyDown}
-          handleSearch={handleSearch}
-          handleGetLocation={handleGetLocation}
-        />
+        <div className="max-md:fixed bottom-0 inset-x-0 p-4 dark:bg-zinc-900 ">
+          <SearchInput
+            value={input}
+            onChange={handleInputChange}
+            onKeyDown={handleKeyDown}
+            handleSearch={handleSearch}
+            handleGetLocation={handleGetLocation}
+          />
 
-        <Footer />
+          <Footer />
+        </div>
       </div>
-      {/* <Popup visible={popupVisible} /> */}
+      <Popup visible={popupVisible} />
     </>
   )
 }
