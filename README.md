@@ -1,12 +1,12 @@
-# Fui de CEP
+# Localizei
 
-![Imagem do projeto](https://i.imgur.com/8xfN8Dp.png)
+![Imagem do projeto](https://i.imgur.com/XrkIVdw.png)
 
 **Desbloqueie o caminho para a precisão na busca de CEPs!**
 
 ## 🔥 Introdução
 
-#### Fui de CEP é uma plataforma inovadora para a busca ágil e precisa de CEPs. Desenvolvida com tecnologia de ponta, oferece uma experiência simplificada e eficiente na localização de detalhes precisos de endereços em segundos.
+#### Localizei é uma plataforma inovadora para a busca ágil e precisa de CEPs. Desenvolvida com tecnologia de ponta, oferece uma experiência simplificada e eficiente na localização de detalhes precisos de endereços em segundos.
 
 **Características Principais:**
 
@@ -20,7 +20,7 @@
 
 **🌐 Acessibilidade:** Projetado para ser acessível em diferentes dispositivos, atendendo diversas necessidades.
 
-**Descubra a nova era da busca de CEP com o Fui de CEP. Oferecemos uma experiência que combina tecnologia avançada e inovação, simplificando suas tarefas de localização de endereços.**
+**Descubra a nova era da busca de CEP com o Localizei. Oferecemos uma experiência que combina tecnologia avançada e inovação, simplificando suas tarefas de localização de endereços.**
 
 ### Experimente hoje mesmo e sinta a diferença!
 
@@ -95,4 +95,4 @@ Você pode contribuir de várias maneiras:
 
 #### Seja para sugestões, críticas construtivas ou apenas para um bate-papo sobre tecnologia, estou disponível e aberto ao diálogo.
 
-## Obrigado pelo interesse e apoio ao Fui de CEP!
+## Obrigado pelo interesse e apoio ao Lacalizei
