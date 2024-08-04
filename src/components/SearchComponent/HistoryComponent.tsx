@@ -125,6 +125,7 @@ export function HistoryComponent({ history, onDelete }: HistoryComponentProps) {
                 <Button
                   variant={"ghost"}
                   className="flex items-center justify-start gap-2"
+                  disabled
                 >
                   <Share size={18} />
                   Compartilhar
